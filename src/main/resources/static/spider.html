@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Gi</title>
+    <link rel="stylesheet" href="./style/spider.css">
+</head>
+<body>
+
+<div id="other">
+
+    <button onclick="activeSpider()">Activar Araña</button>
+    <button onclick="volverSearchGi()">volver a search Gi</button>
+
+    <div id="spider1">
+
+        <div id="eye">
+            <p id="pupil"></p>
+        </div>
+
+        <div id="leg">
+            <p></p>
+            <p></p>
+        </div>
+
+        <div id="leg2">
+            <p></p>
+            <p></p>
+        </div>
+
+        <div id="leg3">
+            <p></p>
+            <p></p>
+        </div>
+
+        <div id="leg4">
+            <p></p>
+            <p></p>
+        </div>
+
+        <div id="leg5">
+            <p></p>
+            <p></p>
+        </div>
+
+        <div id="leg6">
+            <p></p>
+            <p></p>
+        </div>
+
+        <div id="string"></div>
+
+    </div>
+
+
+    <script src="https://use.edgefonts.net/creepster.js"></script>
+    <div id="letters">
+        <script src="https://use.edgefonts.net/eater.js"></script>
+
+        <script src="https://use.edgefonts.net/nosifer.js"></script>
+        <p></p>
+    </div>
+
+    <script>
+
+        function volverSearchGi(){
+            document.location.href = 'index.html';
+        }
+
+        function activeSpider(){
+            fetch("http://localhost:8080/api/spider").then(response =>
+            console.log(response))
+        }
+
+    </script>
+
+</div>
+</body>
+</html>

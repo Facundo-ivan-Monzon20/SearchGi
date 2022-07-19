@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Gi</title>
+    <link rel="stylesheet" href="./style/results.css">
+    <link rel="stylesheet" href="./style/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100&family=Roboto:ital@1&display=swap"
+        rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100&family=Roboto:ital@1&display=swap');
+    </style>
+
+</head>
+
+<body>
+
+    <div class="logoAndInput">
+        <a href="./index.html"><img src="./images/logo-GI.png" alt="Logo de Gi"></a>
+        <input type="text" id="textSearch">
+        <button class="buttonSearch" onclick="search()"></i>Buscar</button>
+    </div>
+
+
+
+    <div class="padreResultado">
+        <span class="cantidadResult" id="cant-result"></span>
+
+        <div id="links">
+
+        </div>
+    </div>
+
+
+    <script>
+        let aux = document.location.href.split('?query=');
+        let query = aux[1];
+
+        if(query !== undefined){
+            document.getElementById("textSearch").value = query;
+        }
+
+        fetch("http://localhost:8080/api/search?query=" + query)
+            .then(response => response.json())
+            .then(json =>  { console.log(json)
+
+                let html = '';
+                let count = 0;
+                for (let resultSearch of json){
+                    console.log(resultSearch);
+                    html += getHtmlResultSearch(resultSearch);
+                    count += 1;
+                }
+                document.getElementById("links").outerHTML = html;
+                document.getElementById("cant-result").outerHTML = "Cerca de " + count + " resultados";
+            }
+            );
+
+        function getHtmlResultSearch(resultSearch){
+            return `<div class="resultados">
+            <h3><a href="${resultSearch.url}" target="_blank">${resultSearch.title}</a></h3>
+            <span>${resultSearch.description}</span>
+        </div>`;
+
+        }
+
+        function search(){
+            let textSearch = document.getElementById('textSearch').value;
+
+            if(textSearch === ' ' || textSearch === ''){
+
+            } else {
+                document.location.href = 'result.html?query=' + textSearch;
+            }
+
+        }
+    </script>
+
+</body>
+
+</html>

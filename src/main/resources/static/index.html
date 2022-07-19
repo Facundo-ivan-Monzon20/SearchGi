@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Gi</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100&family=Roboto:ital@1&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100&family=Roboto:ital@1&display=swap');
+    </style> 
+</head>
+
+<body>
+
+    <div class="logoAndInput">
+        <img src="./images/logo-GI.png" alt="Logo de Gi">
+        <input id="search-input" type="text">
+        <div>
+            <button class="buttonSearch" onclick="search()"></i>Buscar</button>
+            <button class="buttonSearch" onclick="spider()">Activar Araña</button>
+        </div>
+    </div>
+
+
+    <script>
+        function search(){
+            let textSearch = document.getElementById('search-input').value;
+
+            if(textSearch === ' ' || textSearch === ''){
+
+            } else {
+                document.location.href = 'result.html?query=' + textSearch;
+            }
+
+        }
+
+        function spider(){
+            document.location.href = "spider.html";
+        }
+    </script>
+
+</body>
+
+</html>

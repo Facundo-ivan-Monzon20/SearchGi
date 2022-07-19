@@ -1,0 +1,57 @@
+body{
+    background-color: #f8e8be;
+    font-family: 'Roboto', sans-serif;
+}
+
+.logoAndInput {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: black;
+    text-align: center;
+}
+
+button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: auto;
+    width: 200px;
+    font-size: 10px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    background-color: #e7ac1b;
+    border: none;
+    border-radius: 10px;
+}
+
+button:hover {
+    background-color: #d09b18
+}
+
+button:active {
+    background-color: #d09b18;
+    transform: translateY(4px);
+}
+
+input {
+    font-size: 7px;
+    border-radius: 20px;
+    margin: 15px;
+    padding: 5px 10px;
+    border: #000 solid 2px;
+    background-color:#FFF0C9; 
+}
+
+input[type=text] {
+    transition: width 0.4s ease-in-out;
+}
+
+img{
+    margin: 0;
+    padding: 0;
+
+}

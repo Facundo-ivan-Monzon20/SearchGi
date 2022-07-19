@@ -1,0 +1,9 @@
+com/searchgi/SearchGi/repositories/SearchRepository.class
+com/searchgi/SearchGi/services/SpiderService.class
+com/searchgi/SearchGi/repositories/SearchRepositoryImp.class
+com/searchgi/SearchGi/ServletInitializer.class
+com/searchgi/SearchGi/SearchGiApplication.class
+com/searchgi/SearchGi/services/SearchService.class
+com/searchgi/SearchGi/services/ScheduleService.class
+com/searchgi/SearchGi/models/WebPage.class
+com/searchgi/SearchGi/controllers/SearchController.class
